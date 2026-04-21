@@ -29,7 +29,7 @@ It stores chat history and generates real-time AI responses.
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/your-username/AI-Chatbot.git
+git clone (https://github.com/Shivamkakde22/AI-CHATBOT.git)
 cd AI-Chatbot
 =======
 # AI-CHATBOT
