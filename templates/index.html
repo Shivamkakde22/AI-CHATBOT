@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>AI Chatbot</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h1>AI Chatbot</h1>
+
+        <form action="/clear" method="post">
+            <button type="submit" class="clear-btn">Clear Chat</button>
+        </form>
+
+    </div>
+
+    <!-- Chat Section -->
+    <div class="chat-section">
+
+        <h3>AI Personal Assistant</h3>
+
+        <!-- CHAT BOX -->
+        <div class="chat-box">
+
+            {% for msg in chat %}
+
+                {% if msg.sender == "user" %}
+                    <div class="user-input">{{ msg.text }}</div>
+                {% else %}
+                    <div class="bot-response">{{ msg.text }}</div>
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <!-- INPUT FORM -->
+        <form action="/chat" method="post" class="input-area">
+            <input type="text" name="message" placeholder="Type your message..." required>
+            <button type="submit" class="send-btn">Send</button>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
